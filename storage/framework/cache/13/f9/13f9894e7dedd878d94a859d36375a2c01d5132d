@@ -1,0 +1,18 @@
+1646587998a:1:{s:15:"site/footer.htm";a:6:{s:8:"fileName";s:15:"site/footer.htm";s:7:"content";s:218:"==
+<div id="footer">
+    <div class="container">
+    
+        {% component 'formSubscribe' %}
+    
+        <hr />
+        <p class="muted credit">&copy; {{ "now"|date("Y") }} Artem Kireev</p>
+    </div>
+</div>";s:5:"mtime";i:1646586664;s:6:"markup";s:214:"<div id="footer">
+    <div class="container">
+    
+        {% component 'formSubscribe' %}
+    
+        <hr />
+        <p class="muted credit">&copy; {{ "now"|date("Y") }} Artem Kireev</p>
+    </div>
+</div>";s:4:"code";N;s:17:"_PARSER_ERROR_INI";s:0:"";}}
