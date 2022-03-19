@@ -1,7 +1,16 @@
 title = "AJAX framework"
 url = "/demo/ajax"
 layout = "default"
+
+[formSubscribe]
+urlToUnsubscribe = "unsubscribe"
+urlToProfile = "subscriber-profile"
+geo = "disabled"
+thanksMessage = "Thanks for subscribe!"
+errorMessage = "Email already exists!"
+
 ==
+
 <?php
 function onTest()
 {
@@ -25,7 +34,9 @@ function onTest()
     }
 }
 ?>
+
 ==
+
 <div class="jumbotron title-js">
     <div class="container">
         <div class="row">
