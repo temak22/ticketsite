@@ -39,16 +39,18 @@ class __TwigTemplate_a2a3c7f255901ae679b6d87254c395ae7ebeb959339d6823f934bcb4fce
         echo "<div id=\"footer\">
     <div class=\"container\">
     
+        <hr />
+
         ";
-        // line 4
+        // line 6
         $context['__cms_component_params'] = [];
         echo $this->env->getExtension('Cms\Twig\Extension')->componentFunction("formSubscribe"        , $context['__cms_component_params']        );
         unset($context['__cms_component_params']);
-        // line 5
+        // line 7
         echo "    
         <hr />
         <p class=\"muted credit\">&copy; ";
-        // line 7
+        // line 9
         echo twig_escape_filter($this->env, twig_date_format_filter($this->env, "now", "Y"), "html", null, true);
         echo " Artem Kireev</p>
     </div>
@@ -67,7 +69,7 @@ class __TwigTemplate_a2a3c7f255901ae679b6d87254c395ae7ebeb959339d6823f934bcb4fce
 
     public function getDebugInfo()
     {
-        return array (  52 => 7,  48 => 5,  44 => 4,  39 => 1,);
+        return array (  54 => 9,  50 => 7,  46 => 6,  39 => 1,);
     }
 
     public function getSourceContext()
@@ -75,6 +77,8 @@ class __TwigTemplate_a2a3c7f255901ae679b6d87254c395ae7ebeb959339d6823f934bcb4fce
         return new Source("<div id=\"footer\">
     <div class=\"container\">
     
+        <hr />
+
         {% component 'formSubscribe' %}
     
         <hr />
@@ -85,8 +89,8 @@ class __TwigTemplate_a2a3c7f255901ae679b6d87254c395ae7ebeb959339d6823f934bcb4fce
     
     public function checkSecurity()
     {
-        static $tags = array("component" => 4);
-        static $filters = array("escape" => 7, "date" => 7);
+        static $tags = array("component" => 6);
+        static $filters = array("escape" => 9, "date" => 9);
         static $functions = array();
 
         try {

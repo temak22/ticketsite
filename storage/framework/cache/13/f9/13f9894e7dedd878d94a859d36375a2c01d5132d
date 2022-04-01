@@ -1,15 +1,19 @@
-1647717990a:1:{s:15:"site/footer.htm";a:6:{s:8:"fileName";s:15:"site/footer.htm";s:7:"content";s:218:"==
+1648845842a:1:{s:15:"site/footer.htm";a:6:{s:8:"fileName";s:15:"site/footer.htm";s:7:"content";s:236:"==
 <div id="footer">
     <div class="container">
     
+        <hr />
+
         {% component 'formSubscribe' %}
     
         <hr />
         <p class="muted credit">&copy; {{ "now"|date("Y") }} Artem Kireev</p>
     </div>
-</div>";s:5:"mtime";i:1646586664;s:6:"markup";s:214:"<div id="footer">
+</div>";s:5:"mtime";i:1647775165;s:6:"markup";s:232:"<div id="footer">
     <div class="container">
     
+        <hr />
+
         {% component 'formSubscribe' %}
     
         <hr />
