@@ -1,4 +1,4 @@
-title = "Ticketsite Homepage"
+title = "Biletarium"
 url = "/"
 layout = "default"
 is_hidden = 0
@@ -13,7 +13,25 @@ errorMessage = "Email already exists!"
 <div class="container">
 
     <div class="page-header">
-        <h2>Login <small>Test</small></h2>
+        <!--Images: <img src="{{ 'assets/images/NAME.jpg'|theme }}" alt="The image is not visible">-->
+
+    <!-- Титул -->
+    <h1>Добро пожаловать на Biletarium!</h1>
+        <div class="search">
+            <!-- Место -->
+            <select>
+                <option>Москва</option>
+                <option>Санкт-Петербург</option>
+                <option></option>
+            </select>
+            <!-- Поле поиска -->
+            <form>
+                <input type="text" placeholder="Что вы ищете?">
+            </form>
+            <!-- Кнопка поиска -->
+            <button>Вход</button>
+        </div>
     </div>
 
 </div>
+
