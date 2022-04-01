@@ -1,4 +1,4 @@
-1646587998a:1:{s:15:"site/header.htm";a:5:{s:8:"fileName";s:15:"site/header.htm";s:7:"content";s:1224:"<!-- Nav -->
+1647718223a:1:{s:15:"site/header.htm";a:5:{s:8:"fileName";s:15:"site/header.htm";s:7:"content";s:1214:"<!-- Nav -->
 <nav id="layout-nav" class="navbar navbar-inverse navbar-fixed-top navbar-autohide" role="navigation">
     <div class="container">
         <div class="navbar-header">
@@ -13,14 +13,14 @@
         <div class="collapse navbar-collapse navbar-main-collapse">
             <ul class="nav navbar-nav">
                 <li class="separator hidden-xs"></li>
-                <li class="{% if this.page.id == 'home' %}active{% endif %}"><a href="{{ 'home'|page }}">Basic concepts</a></li>
+                <li class="{% if this.page.id == 'home' %}active{% endif %}"><a href="{{ 'home'|page }}">Home</a></li>
                 <li class="{% if this.page.id == 'ajax' %}active{% endif %}"><a href="{{ 'ajax'|page }}">AJAX framework</a></li>
                 <li class="{% if this.page.id == 'plugins' %}active{% endif %}"><a href="{{ 'plugins'|page }}">Plugin components</a></li>
             </ul>
         </div>
     </div>
 </nav>
-";s:5:"mtime";i:1646584163;s:6:"markup";s:1223:"<!-- Nav -->
+";s:5:"mtime";i:1647717617;s:6:"markup";s:1213:"<!-- Nav -->
 <nav id="layout-nav" class="navbar navbar-inverse navbar-fixed-top navbar-autohide" role="navigation">
     <div class="container">
         <div class="navbar-header">
@@ -35,7 +35,7 @@
         <div class="collapse navbar-collapse navbar-main-collapse">
             <ul class="nav navbar-nav">
                 <li class="separator hidden-xs"></li>
-                <li class="{% if this.page.id == 'home' %}active{% endif %}"><a href="{{ 'home'|page }}">Basic concepts</a></li>
+                <li class="{% if this.page.id == 'home' %}active{% endif %}"><a href="{{ 'home'|page }}">Home</a></li>
                 <li class="{% if this.page.id == 'ajax' %}active{% endif %}"><a href="{{ 'ajax'|page }}">AJAX framework</a></li>
                 <li class="{% if this.page.id == 'plugins' %}active{% endif %}"><a href="{{ 'plugins'|page }}">Plugin components</a></li>
             </ul>

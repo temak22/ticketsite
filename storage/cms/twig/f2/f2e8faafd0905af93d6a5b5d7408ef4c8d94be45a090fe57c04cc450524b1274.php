@@ -61,7 +61,7 @@ class __TwigTemplate_039f3bd97d54f16797c15c57061c479963452c79c8101b466e463e324d4
         }
         echo "\"><a href=\"";
         echo $this->extensions['Cms\Twig\Extension']->pageFilter("home");
-        echo "\">Basic concepts</a></li>
+        echo "\">Home</a></li>
                 <li class=\"";
         // line 17
         if ((twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, ($context["this"] ?? null), "page", [], "any", false, false, true, 17), "id", [], "any", false, false, true, 17) == "ajax")) {
@@ -116,7 +116,7 @@ class __TwigTemplate_039f3bd97d54f16797c15c57061c479963452c79c8101b466e463e324d4
         <div class=\"collapse navbar-collapse navbar-main-collapse\">
             <ul class=\"nav navbar-nav\">
                 <li class=\"separator hidden-xs\"></li>
-                <li class=\"{% if this.page.id == 'home' %}active{% endif %}\"><a href=\"{{ 'home'|page }}\">Basic concepts</a></li>
+                <li class=\"{% if this.page.id == 'home' %}active{% endif %}\"><a href=\"{{ 'home'|page }}\">Home</a></li>
                 <li class=\"{% if this.page.id == 'ajax' %}active{% endif %}\"><a href=\"{{ 'ajax'|page }}\">AJAX framework</a></li>
                 <li class=\"{% if this.page.id == 'plugins' %}active{% endif %}\"><a href=\"{{ 'plugins'|page }}\">Plugin components</a></li>
             </ul>
