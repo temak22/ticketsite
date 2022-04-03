@@ -3,6 +3,13 @@ url = "/event/:slug"
 layout = "default"
 is_hidden = 0
 
+[formSubscribe]
+urlToUnsubscribe = "unsubscribe"
+urlToProfile = "subscriber-profile"
+geo = "disabled"
+thanksMessage = "Thanks for subscribe!"
+errorMessage = "Email already exists!"
+
 [blogPost]
 slug = "{{ :slug }}"
 categoryPage = "event"
