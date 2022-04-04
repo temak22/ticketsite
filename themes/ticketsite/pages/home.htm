@@ -1,14 +1,8 @@
-title = "Biletarium"
+title = "Home"
 url = "/"
 layout = "default"
 is_hidden = 0
 
-[formSubscribe]
-urlToUnsubscribe = "unsubscribe"
-urlToProfile = "subscriber-profile"
-geo = "disabled"
-thanksMessage = "Thanks for subscribe!"
-errorMessage = "Email already exists!"
 ==
 <div class="container">
 
@@ -24,16 +18,10 @@ errorMessage = "Email already exists!"
                 <option>Санкт-Петербург</option>
                 <option></option>
             </select>
-            <!-- Поле поиска -->
-            <form>
-                <input type="text" placeholder="Что вы ищете?">
-            </form>
-            <!-- Кнопка поиска -->
-            <button>Вход</button>
         </div>
     </div>
 
     <!-- Заготовка для слайдера. Пока просто вывод всех мерроприятий из бд -->
-    {% partial 'site/tickets' %}
+    {% partial 'site/lists/tickets_list' %}
 </div>
 

@@ -1,37 +1,50 @@
 <header>
+
     <!-- Logo -->
     <a href="" class="logo">
         <img src="" alt="Logo">
     </a>
-<!-- Nav -->
-<nav id="layout-nav" class="navbar navbar-inverse navbar-fixed-top navbar-autohide" role="navigation">
-    <div class="container">
-        <div class="navbar-header">
-            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-main-collapse">
-                <span class="sr-only">Toggle navigation</span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-            </button>
-            <a class="navbar-brand" href="{{ 'home'|page }}">October Demo</a>
+    
+    <!-- Nav -->
+    <nav id="layout-nav" class="navbar navbar-inverse navbar-fixed-top navbar-autohide" role="navigation">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-main-collapse">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="{{ 'home'|page }}">HOME</a>
+            </div>
+            <div class="collapse navbar-collapse navbar-main-collapse">
+                <ul class="nav navbar-nav">
+                    <li class="separator hidden-xs"></li>
+                    <li class="{% if this.page.id == 'theatres' %}active{% endif %}"><a href="{{ 'theatres'|page }}">Театр</a></li>
+                    <li class="{% if this.page.id == 'movies' %}active{% endif %}"><a href="{{ 'movies'|page }}">Кино</a></li>
+                    <li class="{% if this.page.id == 'museums' %}active{% endif %}"><a href="{{ 'museums'|page }}">Музеи</a></li>
+                    <li class="{% if this.page.id == 'concerts' %}active{% endif %}"><a href="{{ 'concerts'|page }}">Концерты</a></li>
+                    <li class="{% if this.page.id == 'sports' %}active{% endif %}"><a href="{{ 'sports'|page }}">Спорт</a></li>
+                </ul>
+            </div>
         </div>
-        <div class="collapse navbar-collapse navbar-main-collapse">
-            <ul class="nav navbar-nav">
-                <li class="separator hidden-xs"></li>
-                <li class="{% if this.page.id == 'home' %}active{% endif %}"><a href="{{ 'home'|page }}">Театр</a></li>
-                <li class="{% if this.page.id == 'ajax' %}active{% endif %}"><a href="{{ 'ajax'|page }}">Кино</a></li>
-                <li class="{% if this.page.id == 'plugins' %}active{% endif %}"><a href="{{ 'plugins'|page }}">Музеи</a></li>
-                <li class="{% if this.page.id == 'ajax' %}active{% endif %}"><a href="{{ 'ajax'|page }}">Концерты</a></li>
-                <li class="{% if this.page.id == 'plugins' %}active{% endif %}"><a href="{{ 'plugins'|page }}">Спорт</a></li>
-            </ul>
-        </div>
-    </div>
-</nav>
-     <!-- Language -->
-     <select>
+    </nav>
+
+    <!-- Language -->
+    <select>
         <option>Русский</option>
         <option>English</option>
     </select>
-     <!-- Entering -->
-     <button>Вход</button>
+
+    <!-- Entering -->
+    <button>Вход</button>
+     
+    <!-- Поле поиска -->
+    <div class="search">
+        <form action="{{ 'search' | page }}" method="get">
+            <input name="q" type="text" placeholder="What are you looking for?" autocomplete="off">
+            <button type="submit">Search</button>
+        </form>
+    </div>
+
 </header>

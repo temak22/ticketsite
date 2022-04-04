@@ -1,0 +1,32 @@
+title = "Theatres"
+url = "/theatres"
+layout = "default"
+is_hidden = 0
+
+==
+<div class="container">
+
+    <div class="page-header">
+        <!--Images: <img src="{{ 'assets/images/NAME.jpg'|theme }}" alt="The image is not visible">-->
+
+    <!-- Титул -->
+    <h1>Театры</h1>
+        <div class="search">
+            <!-- Место -->
+            <select>
+                <option>Москва</option>
+                <option>Санкт-Петербург</option>
+                <option></option>
+            </select>
+            <!-- Поле поиска -->
+            <form>
+                <input type="text" placeholder="Что вы ищете?">
+            </form>
+            <!-- Кнопка поиска -->
+            <button>Вход</button>
+        </div>
+    </div>
+
+    <!-- Заготовка для слайдера. Пока просто вывод всех мерроприятий из бд -->
+    {% partial 'site/lists/theatres_list' %}
+</div>
