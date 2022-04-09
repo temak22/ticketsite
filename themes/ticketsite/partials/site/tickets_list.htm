@@ -1,0 +1,44 @@
+==
+{% set obCategory = CategoryPage.get() %}
+{% set obProductList = ProductList.make().sort(ProductList.getSorting()).active().category(obCategory.id) %}
+
+{% if obProductList.isNotEmpty() %}
+    <div class="product-list-wrapper">
+
+        {% for obProduct in obProductList %}
+            <div data-id="{{ obProduct.id }}">
+                    
+                <a href="/event/{{ obProduct.slug }}">
+                    <!-- Картинка -->
+                    {% if obProduct.preview_image is not empty %}
+                        <img src="{{ obProduct.preview_image.path }}" title="{{ obProduct.preview_image.title }}" width="200" alt="{{ obProduct.preview_image.description }}">
+                    {% endif %}
+                </a>
+            
+            </div>
+            
+            <div class="blog__content">
+                <div class="blog__title">
+                    <!-- Название мероприятия -->
+                    <a href="/event/{{ obProduct.slug }}">
+                        <h3>{{ obProduct.name }}</h3>
+                    </a>
+                </div>
+                <!-- Краткая информация -->
+                <div class="blog__text">{{ obProduct.preview_text }}</div>
+            </div>
+            
+            <br>
+            
+            {% set obOffer = obProduct.offer.first() %}
+            
+            {% if obOffer.isNotEmpty()%}  
+                <span>Цена: {{ obOffer.price }} {{ obOffer.currency }}</span>
+            {% endif %}
+            
+            <hr>
+        {% endfor %}
+
+    </div>
+{% endif %}
+

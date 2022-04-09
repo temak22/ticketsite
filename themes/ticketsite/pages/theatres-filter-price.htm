@@ -1,0 +1,30 @@
+title = "Theatres"
+url = "/theatres/filter-price"
+layout = "default"
+is_hidden = 0
+
+[CategoryPage]
+slug = "theatres"
+slug_required = 1
+smart_url_check = 0
+
+[ProductList]
+sorting = "price_asc"
+
+==
+<div class="container">
+
+    <div class="page-header">
+        <!--Images: <img src="{{ 'assets/images/NAME.jpg'|theme }}" alt="The image is not visible">-->
+
+    <!-- Титул -->
+    <h1>Театры</h1>
+       
+    </div>
+
+    <!-- Заготовка для слайдера. Пока просто вывод всех мерроприятий из бд -->
+    <a href="{{ 'theatres'|page }}">Сортировать по новизне: </a>  |  <a href="{{ 'theatres-filter-price'|page }}"> Сортировать по цене:</a>
+    <hr>
+
+    {% partial 'site/tickets_list' %}
+</div>

@@ -1,0 +1,30 @@
+title = "Movies"
+url = "/movies/filter-price"
+layout = "default"
+is_hidden = 0
+
+[CategoryPage]
+slug = "movies"
+slug_required = 1
+smart_url_check = 0
+
+[ProductList]
+sorting = "price_asc"
+
+==
+<div class="container">
+
+    <div class="page-header">
+        <!--Images: <img src="{{ 'assets/images/NAME.jpg'|theme }}" alt="The image is not visible">-->
+
+    <!-- Титул -->
+    <h1>Кино</h1>
+       
+    </div>
+
+    <!-- Заготовка для слайдера. Пока просто вывод всех мерроприятий из бд -->
+    <a href="{{ 'movies'|page }}">Сортировать по новизне: </a>  |  <a href="{{ 'movies-filter-price'|page }}"> Сортировать по цене:</a>
+    <hr>
+
+    {% partial 'site/tickets_list' %}
+</div>

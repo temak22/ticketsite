@@ -3,6 +3,14 @@ url = "/"
 layout = "default"
 is_hidden = 0
 
+[CategoryPage]
+slug = "tickets"
+slug_required = 1
+smart_url_check = 0
+
+[ProductList]
+sorting = "new"
+
 ==
 <div class="container">
 
@@ -14,7 +22,10 @@ is_hidden = 0
         
     </div>
 
-    <!-- Заготовка для слайдера. Пока просто вывод всех мерроприятий из бд -->
-    {% partial 'site/lists/tickets_list' %}
+    <!-- Заготовка для слайдера. Пока просто вывод всех мероприятий из бд -->
+    <a href="{{ 'home'|page }}">Сортировать по новизне: </a>  |  <a href="{{ 'home-filter-price'|page }}"> Сортировать по цене:</a>
+    <hr>
+
+    {% partial 'site/tickets_list' %}
 </div>
 

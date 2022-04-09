@@ -3,6 +3,14 @@ url = "/concerts"
 layout = "default"
 is_hidden = 0
 
+[CategoryPage]
+slug = "concerts"
+slug_required = 1
+smart_url_check = 0
+
+[ProductList]
+sorting = "new"
+
 ==
 <div class="container">
 
@@ -15,5 +23,8 @@ is_hidden = 0
     </div>
 
     <!-- Заготовка для слайдера. Пока просто вывод всех мерроприятий из бд -->
-    {% partial 'site/lists/concerts_list' %}
+    <a href="{{ 'concerts'|page }}">Сортировать по новизне: </a>  |  <a href="{{ 'concerts-filter-price'|page }}"> Сортировать по цене:</a>
+    <hr>
+
+    {% partial 'site/tickets_list' %}
 </div>

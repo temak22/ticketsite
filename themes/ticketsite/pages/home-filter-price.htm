@@ -1,0 +1,30 @@
+title = "Home"
+url = "/filter-price"
+layout = "default"
+is_hidden = 0
+
+[CategoryPage]
+slug = "tickets"
+slug_required = 1
+smart_url_check = 0
+
+[ProductList]
+sorting = "price_asc"
+
+==
+<div class="container">
+
+    <div class="page-header">
+        <!--Images: <img src="{{ 'assets/images/NAME.jpg'|theme }}" alt="The image is not visible">-->
+
+    <!-- Титул -->
+    <h1>Добро пожаловать на Biletarium!</h1>
+        
+    </div>
+
+    <!-- Заготовка для слайдера. Пока просто вывод всех мероприятий из бд -->
+    <a href="{{ 'home'|page }}">Сортировать по новизне: </a>  |  <a href="{{ 'home-filter-price'|page }}"> Сортировать по цене:</a>
+    <hr>
+    
+    {% partial 'site/tickets_list' %}
+</div>

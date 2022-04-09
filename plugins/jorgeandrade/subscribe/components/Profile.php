@@ -77,7 +77,7 @@ class Profile extends ComponentBase
         try{
 
             $subscriber = Subs::whereCode($code)->whereStatus(1)->firstOrFail();
-            $subscriber->email = post('email');
+            // $subscriber->email = post('email');
             $subscriber->name = post('name');
             $subscriber->surname = post('surname');
             $subscriber->country = post('country');
