@@ -20,6 +20,16 @@
                     <li class="{% if this.page.id == 'museums' %}active{% endif %}"><a href="{{ 'museums'|page }}">Музеи</a></li>
                     <li class="{% if this.page.id == 'concerts' %}active{% endif %}"><a href="{{ 'concerts'|page }}">Концерты</a></li>
                     <li class="{% if this.page.id == 'sports' %}active{% endif %}"><a href="{{ 'sports'|page }}">Спорт</a></li>
+                    <li class="{% if this.page.id == 'account' %}active{% endif %}"><a href="{{ 'account'|page }}">
+                        {% if not user %}
+                        Авторизация
+                        {% else %}
+                        Аккаунт
+                        {% endif %}
+                    </a></li>
+                    {% if user %}
+                    <li><a data-request="onLogout" href="{{ 'home'|page }}">Выход</a></li>
+                    {% endif %}
                 </ul>
             </div>
         </div>
@@ -30,9 +40,6 @@
         <option>Русский</option>
         <option>English</option>
     </select>
-
-    <!-- Entering -->
-    <button>Вход</button>
      
     <!-- Поле поиска -->
     <div class="search">
