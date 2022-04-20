@@ -1,0 +1,81 @@
+title = "Order"
+url = "/order"
+layout = "default"
+is_hidden = 0
+
+[MakeOrder]
+mode = "submit"
+redirect_on = 1
+redirect_page = "order_success"
+
+[PaymentMethodList]
+==
+<hr>
+{% set obCartElementList = Cart.get() %}
+{% if obCartElementList.isNotEmpty() %}
+    {% for obCartElement in obCartElementList %}
+        {% set obOffer = obCartElement.offer %}
+        <div>Name: {{ obOffer.product.name }}</div>
+        <div>Количество: <input type="number" value="{{ obCartElement.количество }}"></div>
+        <div>Цена: {{ obOffer.price }} {{ obOffer.currency }}</div>
+        <div>Общая цена: {{ obCartElement.price }} {{ obCartElement.currency }}</div>
+    {% endfor %}
+
+    <div>Общая цена: {{ obCartElementList.getTotalPrice() }} {{ obCartElementList.getCurrency() }}</div>
+
+    <hr>
+
+    {% set arError = MakeOrder.getErrorMessage %}
+{% set arForm = MakeOrder.getOldFormData %}
+    
+<form href="{{ 'order'|page }}">
+    <label for="field-email">Имя</label>
+    <input type="text" class="form-control" name="name" placeholder="Имя" aria-label="Input first name" required>
+            
+    <label for="field-email">Фамилия</label>
+    <input type="text" class="form-control" name="last_name" placeholder="Фамилия" aria-label="Input last name" required>
+    
+    <label for="field-email">Email</label>
+    <input type="email" id="field-email" placeholder="Email" name="user[email]" value="{{ arForm.user.email }}">
+    {% if arError.message is not empty and arError.field == 'email' %}
+        <p>{{ arError.message }}</p>
+    {% endif %}
+    
+    <label for="field-phone">Телефон</label>
+    <input type="text" id="field-phone-number" placeholder="Номер телефона" name="user[phone_number]" value="{{ arForm.user.phone_number }}">
+    {% if arError.message is not empty and arError.field == 'phone number' %}
+        <p>{{ arError.message }}</p>
+    {% endif %}
+    
+    {% set obPaymentMethodList = PaymentMethodList.make().sort().active() %}
+    {% if obPaymentMethodList.isNotEmpty() %}
+        <div class="payment-method-list-wrapper">
+            {% for obPaymentMethod in obPaymentMethodList %}
+                <input type="radio" name="order[payment_method_id]" id="payment-{{ obPaymentMethod.id }}" value="{{ obPaymentMethod.id }}">
+                <label for="payment-{{ obPaymentMethod.id }}">{{ obPaymentMethod.name }}</label>
+            {% endfor %}
+        </div>
+    {% endif %}
+    
+    {% set obShippingTypeList = ShippingTypeList.make().sort().active() %}
+    {% if obShippingTypeList.isNotEmpty() %}
+        <div class="payment-method-list-wrapper">
+            {% for obShippingType in obShippingTypeList %}
+                <input type="radio" name="order[shipping_type_id]" id="payment-{{ obShippingType.id }}" value="{{ obShippingType.id }}">
+                <label for="payment-{{ obShippingType.id }}">{{ obShippingType.name }}</label>
+            {% endfor %}
+        </div>
+   {% endif %}
+    
+    <input type="hidden" name="order[shipping_price]" value="{{ obOffer.price }}">
+    <button type="submit">Купить</button>
+</form>
+        {% if arError.message is not empty %}
+            <p>{{ arError.message }}</p>
+        {% endif %}
+
+{% else %}
+ <div>Корзина  пуста</div>
+{% endif %}
+
+     
