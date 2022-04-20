@@ -37,7 +37,14 @@
             {% endif %}
             
             <hr>
+            <form class="mb-0">
+                <input type="hidden" name="offer_id" value="{{ obOffer.id }}">
+                <input type="hidden" name="quantity" value="1">
+                {% partial 'form/button-add-to-cart/button-add-to-cart' btnAddClasses='btn-sm' %}
+            </form>
+            <hr>
         {% endfor %}
+
     </div>
 {% endif %}
 

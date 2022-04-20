@@ -7,7 +7,6 @@ is_hidden = 0
 slug = "{{ :slug }}"
 slug_required = 1
 smart_url_check = 1
-skip_error = 0
 
 [formSubscribe]
 urlToUnsubscribe = "unsubscribe"
@@ -19,10 +18,13 @@ errorMessage = "Email already exists!"
 [commentsPost]
 
 ==
+
 <!-- Страница мероприятия -->
 {% set obProduct = ProductPage.get() %}
 
 <div>
+    
+
     <div data-id="{{ obProduct.id }}">
         <h1>{{ obProduct.name }}</h1>
 
@@ -43,30 +45,14 @@ errorMessage = "Email already exists!"
         {% if obOffer.isNotEmpty()%}  
             <span>Цена: {{ obOffer.price }} {{ obOffer.currency }}</span>
         {% endif %}
+
+        <form class="mb-0">
+            <input type="hidden" name="offer_id" value="{{ obOffer.id }}">
+            <input type="hidden" name="quantity" value="1">
+            {% partial 'form/button-add-to-cart/button-add-to-cart' btnAddClasses='btn-sm' %}
+        </form>
+
     </div>
-    <hr>
 
-     <!-- Покупка -->
-    <script>
-        function ButtonAddToCart() {
-            var data = {
-            'cart': [
-                {'offer_id': obOffer.id, 'quantity': 1, 'property': {'double_cheese': true}},
-            ]
-        };
-
-        //Send ajax request and update cart items
-        $.request('Cart::onAdd', {
-            'data': data,
-            'update': {'cart-items': '.cart-item-wrapper'}
-        });
-
-        }
-        
-    </script>
-
-    <a href="{{ 'order'|page }}"><button onclick="ButtonAddToCart()">Добавить в корзину</button></a>
-    
-
-        {% component 'commentsPost' %}
-    </div>
+    {% component 'commentsPost' %}
+</div>

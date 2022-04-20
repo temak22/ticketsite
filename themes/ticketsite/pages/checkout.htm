@@ -1,0 +1,29 @@
+title = "Checkout"
+url = "/checkout"
+layout = "default"
+is_hidden = 0
+
+[PaymentMethodList]
+
+[ShippingTypeList]
+
+[MakeOrder]
+mode = "ajax"
+redirect_on = 1
+redirect_page = "order-complete"
+==
+
+{% set obActiveShippingType = ShippingTypeList.make().active().sort().first() %}
+{% set obCartPositionList = Cart.get(obActiveShippingType) %}
+
+{% set arBreadcrumbs = [
+    {'name': 'Home', 'url': 'index'|page},
+    {'name': 'Checkout', 'url': 'checkout'|page}
+] %}
+
+<div class="container">
+    {% partial 'product/cart-position-list/cart-position-list' obCartPositionList=obCartPositionList obActiveShippingType=obActiveShippingType %}
+    {% if obCartPositionList.count > 0 %}
+        {% partial 'form/checkout-form/checkout-form' %}
+    {% endif %}
+</div>

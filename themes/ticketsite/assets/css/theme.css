@@ -103,7 +103,7 @@
   width: 50px !important;
 }
 .w-100 {
-  width: 100px !important;
+  width: 1000px !important;
 }
 .w-120 {
   width: 120px !important;
@@ -461,4 +461,10 @@
 }
 body {
   padding-top: 70px;
+}
+.navbar-nav {
+  flex-direction: row;
+}
+div.search{
+  margin: 15px;
 }
