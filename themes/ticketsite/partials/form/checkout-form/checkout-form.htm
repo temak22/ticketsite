@@ -26,13 +26,6 @@
                 </div>
             </div>
         </div>
-        <div class="form-group">
-            <label for="inputAddress">Телефон</label>
-            <input type="text" class="form-control" id="inputPhone" name="phone" placeholder="89999999999" required>
-            <div class="invalid-feedback">
-                Please add your address
-            </div>
-        </div>
         <hr>
 
         {% set obShippingTypeList = ShippingTypeList.make().sort().active() %}

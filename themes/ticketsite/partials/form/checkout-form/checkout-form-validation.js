@@ -51,7 +51,6 @@ export default new class CheckoutFormValidation {
         'email': form.find('input[name="email"]').val(),
         'name': form.find('input[name="name"]').val(),
         'last_name': form.find('input[name="last_name"]').val(),
-        'phone': form.find('input[name="phone"]').val(),
       }
     };
 
