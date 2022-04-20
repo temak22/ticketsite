@@ -10,20 +10,55 @@ errorMessage = "Email already exists!"
 [session]
 security = "all"
 ==
+<?php
+function onInit()
+{
+  
+    $this['path_js'] = mix('javascript/common.js', 'themes/'.\Cms\Classes\Theme::getActiveTheme()->getDirName().'/assets');
+    $this['cart_is_available'] = false;
+
+    /**
+     * Check if Cart component has been registered and autoload it
+     **/
+
+    $obManager = \Cms\Classes\ComponentManager::instance();
+    if ($obManager->hasComponent('Lovata\OrdersShopaholic\Components\Cart')) {
+        $this['cart_is_available'] = true;
+        $this->addComponent('Lovata\OrdersShopaholic\Components\Cart', 'Cart', []);
+    }
+
+    if ($obManager->hasComponent('Lovata\MightySeo\Components\SeoToolbox')) {
+        $this['seo_toolbox_is_available'] = true;
+        $this->addComponent('Lovata\MightySeo\Components\SeoToolbox', 'SeoToolbox', []);
+    }
+}
+?>
+==
+{% spaceless %}
 <!DOCTYPE html>
 <html>
     <head>
         <meta charset="utf-8">
         <title>Biletarium | {{ this.page.title }}</title>
+
         {% styles %}
         <meta name="description" content="{{ this.page.meta_description }}">
         <meta name="title" content="{{ this.page.meta_title }}">
         <meta name="author" content="OctoberCMS">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta name="generator" content="OctoberCMS">
+        
         <link rel="icon" type="image/png" href="{{ 'assets/images/october.png'|theme }}">
+        <link href="{{ 'assets/css/common.css'|theme }}" rel="stylesheet">
         <link href="{{ 'assets/css/vendor.css'|theme }}" rel="stylesheet">
         <link href="{{ 'assets/css/theme.css'|theme }}" rel="stylesheet">
+      
+
+        {% if seo_toolbox_is_available %}
+            {% placeholder seo_tags default %}
+                {% component 'SeoToolbox' %}
+            {% endplaceholder %}
+        {% endif %}
         
     </head>
     <body>
@@ -47,8 +82,10 @@ security = "all"
         <script src="{{ 'assets/vendor/jquery.js'|theme }}"></script>
         <script src="{{ 'assets/vendor/bootstrap.js'|theme }}"></script>
         <script src="{{ 'assets/javascript/app.js'|theme }}"></script>
+        <script src="{{ path_js }}"></script>
         {% framework extras %}
         {% scripts %}
 
     </body>
 </html>
+{% endspaceless %}

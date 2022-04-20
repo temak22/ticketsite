@@ -30,19 +30,22 @@
                     {% if user %}
                     <li><a data-request="onLogout" href="{{ 'home'|page }}">Выход</a></li>
                     {% endif %}
+                    <!-- Language -->
+                    <li><select>
+                        <option>Русский</option>
+                        <option>English</option>
+                    </select></li>
+                    <li> <div>
+                        {% partial 'product/cart-link-header/cart-link-header' %}
+                    </div></li>
                 </ul>
             </div>
         </div>
     </nav>
-
-    <!-- Language -->
-    <select>
-        <option>Русский</option>
-        <option>English</option>
-    </select>
      
     <!-- Поле поиска -->
     <div class="search">
+        <br>
         <form action="{{ 'search' | page }}" method="get">
             <input name="q" type="text" placeholder="Что вы ищете?" autocomplete="off">
             <button type="submit">Поиск</button>
