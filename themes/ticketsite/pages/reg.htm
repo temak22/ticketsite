@@ -16,7 +16,7 @@ requirePassword = 0
             {% partial account ~ '::register' %}
         </div>
     </div>
-    <div><a href="{{ 'account'|page }}"><button> Есть аккаунт?</button></a></div>
+    <div><a href="{{ 'account'|page }}"><button> {{ 'Есть аккаунт'|_ }}?</button></a></div>
 {% else %}
 
     {% partial account ~ '::activation_check' %}

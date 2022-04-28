@@ -18,12 +18,12 @@ sorting = "new"
         <!--Images: <img src="{{ 'assets/images/NAME.jpg'|theme }}" alt="The image is not visible">-->
 
     <!-- Титул -->
-    <h1>Музеи</h1>
+    <h1>{{ 'Музеи'|_ }}</h1>
         
     </div>
 
     <!-- Заготовка для слайдера. Пока просто вывод всех мерроприятий из бд -->
-    <a href="{{ 'museums'|page }}">Сортировать по новизне: </a>  |  <a href="{{ 'museums-filter-price'|page }}"> Сортировать по цене:</a>
+    <a href="{{ 'museums'|page }}">{{ 'Сортировать по новизне'|_ }}: </a>  |  <a href="{{ 'museums-filter-price'|page }}"> {{ 'Сортировать по цене'|_ }}:</a>
     <hr>
 
     {% partial 'site/tickets_list' %}
