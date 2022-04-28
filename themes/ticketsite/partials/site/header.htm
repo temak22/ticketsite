@@ -10,35 +10,35 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="{{ 'home'|page }}">HOME</a>
+                <a class="navbar-brand" href="{{ 'home'|page }}">{{ 'Главная'|_ }}</a>
             </div>
             <div class="collapse navbar-collapse navbar-main-collapse">
                 <ul class="nav navbar-nav">
                     <li class="separator hidden-xs"></li>
-                    <li class="{% if this.page.id == 'theatres' %}active{% endif %}"><a href="{{ 'theatres'|page }}">Театр</a></li>
-                    <li class="{% if this.page.id == 'movies' %}active{% endif %}"><a href="{{ 'movies'|page }}">Кино</a></li>
-                    <li class="{% if this.page.id == 'museums' %}active{% endif %}"><a href="{{ 'museums'|page }}">Музеи</a></li>
-                    <li class="{% if this.page.id == 'concerts' %}active{% endif %}"><a href="{{ 'concerts'|page }}">Концерты</a></li>
-                    <li class="{% if this.page.id == 'sports' %}active{% endif %}"><a href="{{ 'sports'|page }}">Спорт</a></li>
+                    <li class="{% if this.page.id == 'theatres' %}active{% endif %}"><a href="{{ 'theatres'|page }}">{{ 'Театр'|_ }}</a></li>
+                    <li class="{% if this.page.id == 'movies' %}active{% endif %}"><a href="{{ 'movies'|page }}">{{ 'Кино'|_ }}</a></li>
+                    <li class="{% if this.page.id == 'museums' %}active{% endif %}"><a href="{{ 'museums'|page }}">{{ 'Музеи'|_ }}</a></li>
+                    <li class="{% if this.page.id == 'concerts' %}active{% endif %}"><a href="{{ 'concerts'|page }}">{{ 'Концерты'|_ }}</a></li>
+                    <li class="{% if this.page.id == 'sports' %}active{% endif %}"><a href="{{ 'sports'|page }}">{{ 'Спорт'|_ }}</a></li>
                     <li class="{% if this.page.id == 'account' %}active{% endif %}"><a href="{{ 'account'|page }}">
                         {% if not user %}
-                        Авторизация
+                        {{ 'Авторизация'|_ }}
                         {% else %}
-                        Аккаунт
+                        {{ 'Аккаунт'|_ }}
                         {% endif %}
                     </a></li>
                     {% if user %}
-                    <li><a data-request="onLogout" href="{{ 'home'|page }}">Выход</a></li>
+                    <li><a data-request="onLogout" href="{{ 'home'|page }}">{{ 'Выход'|_ }}</a></li>
                     {% endif %}
-                    <!-- Language -->
-                    <li><select>
-                        <option>Русский</option>
-                        <option>English</option>
-                    </select></li>
-                    <li> <div>
+                    <li> <div class = "navbar-form navbar-right">
                         {% partial 'product/cart-link-header/cart-link-header' %}
                     </div></li>
+                   
+                    
                 </ul>
+                <form class = "navbar-form navbar-right">
+                        {% component 'localePicker' %}
+                    </form>
             </div>
         </div>
     </nav>
@@ -47,8 +47,8 @@
     <div class="search">
         <br>
         <form action="{{ 'search' | page }}" method="get">
-            <input name="q" type="text" placeholder="Что вы ищете?" autocomplete="off">
-            <button type="submit">Поиск</button>
+            <input name="q" type="text" placeholder="{{ 'Что вы ищете?'|_ }}" autocomplete="off">
+            <button type="submit">{{ 'Поиск'|_ }}</button>
         </form>
     </div>
 

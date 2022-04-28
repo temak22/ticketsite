@@ -6,16 +6,16 @@
 
 <section class="cart">
     {% if obCartPositionList.isNotEmpty() %}
-    <h2 class="cart__table-title mt-4 mb-4 text-center">Ваша корзина</h2>
+    <h2 class="cart__table-title mt-4 mb-4 text-center">{{ 'Ваша корзина'|_ }}</h2>
     <div class="cart__table-wrapper table-responsive mb-4">
         <table class="cart__table table table-hover">
             <thead>
                 <tr>
                     <th scope="col"></th>
-                    <th scope="col">Билет</th>
-                    <th scope="col">Цена за билет</th>
-                    <th scope="col">Кол-во</th>
-                    <th scope="col">Сумма</th>
+                    <th scope="col">{{ 'Билет'|_ }}</th>
+                    <th scope="col">{{ 'Цена за билет'|_ }}</th>
+                    <th scope="col">{{ 'Кол-во'|_ }}</th>
+                    <th scope="col">{{ 'Сумма'|_ }}</th>
                     <th scope="col"></th>
                 </tr>
             </thead>
@@ -72,7 +72,7 @@
     </div>
     <div class="cart__total mb-5">
         <div class="cart__total-price row mb-3 pt-3">
-            <span class="cart__total-price-title col-6 col-lg-4 font-weight-bold">Общая цена:</span>
+            <span class="cart__total-price-title col-6 col-lg-4 font-weight-bold">{{ 'Общая цена:'|_ }}</span>
             <span class="cart__total-price-old-price col-3 col-lg-2 text-right text-muted">
                 <span class="cart__total-price-old-price-value {% if Cart.getDiscountTotalPriceValue() == 0 %}d-none{% endif %}">{{ Cart.getOldTotalPrice() }}</span>
                 <span class="cart__total-price-old-price-currency {% if Cart.getDiscountTotalPriceValue() == 0 %}d-none{% endif %}">{{ Cart.getCurrency() }}</span>
@@ -84,7 +84,7 @@
         </div>
     </div>
     {% endif %}
-    <h2 class="cart__empty container mt-4 mb-4 text-center {% if obCartPositionList.isNotEmpty() %}d-none{% endif %}">Корзина пуста</h2>
+    <h2 class="cart__empty container mt-4 mb-4 text-center {% if obCartPositionList.isNotEmpty() %}d-none{% endif %}">{{ 'Корзина пуста'|_ }}</h2>
 </section>
 
 

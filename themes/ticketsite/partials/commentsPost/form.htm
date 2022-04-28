@@ -1,7 +1,7 @@
 <div id="wrap-comment-form">
     <div class="row" id="comment-form">
 
-        <h2 class="comments__reply">Add comment
+        <h2 class="comments__reply">{{ 'Добавить комментарий'|_ }}
             <small><a onclick="Comment.cancel()" style="display: none;" rel="nofollow" id="cancel-comment-reply-link" title="Cancel reply">×</a>
             </small>
         </h2>
@@ -32,7 +32,7 @@
 
             <!-- Submit Field -->
             <div class="form-group">
-                <button type="submit" class="btn  btn--red" onclick="Comment.saveButton(event)">Send</button>
+                <button type="submit" class="btn  btn--red" onclick="Comment.saveButton(event)">{{ 'Отправить'|_ }}</button>
             </div>
         </form>
     </div>

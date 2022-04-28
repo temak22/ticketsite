@@ -14,9 +14,9 @@ requirePassword = 0
     <div class="row">
 
         <div class="col-md-6">
-            <h3>Sign in</h3>
+            <h3>{{ 'Войти'|_ }}</h3>
             {% partial account ~ '::signin' %}
-            <div><a href="{{ 'reg'|page }}"><button class="col-md-6"> Нет аккаунта?</button></a></div>
+            <div><a href="{{ 'reg'|page }}"><button class="col-md-6"> {{ 'Нет аккаунта'|_ }}?</button></a></div>
         </div>
 </div>
 
