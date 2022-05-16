@@ -392,7 +392,7 @@
 }
 .navbar-header .navbar-brand {
   padding-left: 55px;
-  background-image: url('../images/october.png');
+  background-image: url('../images/билеты.jpg');
   background-size: auto 60%;
   background-repeat: no-repeat;
   background-position: 7px 50%;
@@ -441,13 +441,13 @@
 }
 .navbar-inverse .navbar-collapse:not(.in):not(.collapsing) .navbar-nav li.active > a:after,
 .navbar-inverse .navbar-collapse:not(.in):not(.collapsing) .navbar-nav li > a:hover:after {
-  background: #000000;
+  background: #3966f9;
 }
 .navbar-inverse .navbar-collapse:not(.in):not(.collapsing) .navbar-nav li.active > a:hover:after {
-  background: #000000;
+  background: #3966f9;
 }
 .navbar-inverse .navbar-collapse:not(.in):not(.collapsing) .navbar-nav li > a:hover:after {
-  background: #e67e22;
+  background: #3966f9;
 }
 .navbar-default .navbar-collapse:not(.in):not(.collapsing) .navbar-nav li.active > a:after,
 .navbar-default .navbar-collapse:not(.in):not(.collapsing) .navbar-nav li > a:hover:after {
@@ -468,3 +468,65 @@ body {
 div.search{
   margin: 15px;
 }
+
+.footer{
+  padding-top: 10px;
+  padding-left: 930px;
+  margin-left: auto;
+  margin-right: auto;
+  }
+  .footer-center{
+  
+  padding-top: 0px;
+  padding-left: 280px;
+  color: #eeeeee;
+  }
+  .footer-right{
+  padding-left: 1000px;
+  }
+  .footer-icons{
+  padding-left: 280px;
+  }
+  .footer-1{
+  padding-bottom: 20px;
+  background:#000000;
+  }
+  .card{
+  padding-bottom: 20px;
+  background:#000000;
+  padding-left: 0px;
+  }
+  .card-titlet
+  {
+  background:#000000;
+  color:#ffffff;
+  width: 800px;
+  padding-top: 20px;
+  padding-left: 150px;
+  }
+  .card-content author
+  {
+  background:#000000;
+  }
+  .form-control
+  {
+  background:#ffffff;
+  width: 750px;
+  margin-left: 150px;
+  padding-left: 0px;
+  padding-bottom: 0px;
+  }
+  .card-action
+  {
+  width: 900px;
+  padding-left: 150px;
+  padding-bottom: 0px;
+  background:#000000;/*не исправлять*/
+  }
+
+  .nameOfTicket h1{
+    color: #000000;
+  }
+  .ImageOfTicket{
+    width: 500px;
+  }
